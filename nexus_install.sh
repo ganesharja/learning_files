@@ -36,7 +36,8 @@ yum install https://kojipkgs.fedoraproject.org/packages/python-html2text/2016.9.
 if [ "$ELV" == "el7" ]; then
     URL=$(curl -L -s https://help.sonatype.com/display/NXRM3/Download+Archives+-+Repository+Manager+3 | html2text | grep tar.gz | sed -e 's/>//g' -e 's/<//g' | grep ^http | head -1 | awk '{print $1}')
 elif [ "$ELV" == "el8" ]; then
-    URL="https://download.sonatype.com/nexus/3/nexus-3.64.0-04-unix.tar.gz"
+    URL= "https://download.sonatype.com/nexus/3/latest-unix.tar.gz" #"https://download.sonatype.com/nexus/3/nexus-3.64.0-04-unix.tar.gz"
+    
 fi
 
 # Check URL
